@@ -1,0 +1,8 @@
+<IfModule mod_rewrite.c>
+  Options +FollowSymlinks -Multiviews
+  RewriteEngine On
+
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^webhook/(.*)$ index.php?p=$1 [L,E=PATH_INFO:$1]
+</IfModule>
